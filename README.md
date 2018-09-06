@@ -196,6 +196,7 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Static Mesh             | SM_        |            | Many use SM_. Original uses S_.  |
 | Skeletal Mesh           | SK_        |            |                                  |
 | Texture                 | T_         | _?         | See [Textures](#anc-textures)    |
+| Animation Sequence      | AS_        |            |                                  |
 | Particle System         | PS_        |            |                                  |
 | Widget Blueprint        | WBP_       |            |                                  |
 
@@ -210,7 +211,7 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Animation Blueprint     | ABP_       |            |                                  |
 | Animation Composite     | AC_        |            |                                  |
 | Animation Montage       | AM_        |            |                                  |
-| Animation Sequence      | A_         |            |                                  |
+| Animation Sequence      | AS_        |            |                                  |
 | Blend Space             | BS_        |            |                                  |
 | Blend Space 1D          | BS_        |            |                                  |
 | Level Sequence          | LS_        |            |                                  |
