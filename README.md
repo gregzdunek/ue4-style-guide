@@ -306,11 +306,11 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Animated Vector Field   | VFA_       |            |                                  |
 | Camera Anim             | CA_        |            |                                  |
-| Color Curve             | Curve_     | _Color     |                                  |
-| Curve Table             | Curve_     | _Table     |                                  |
+| Color Curve             | CV_        | _Color     |                                  |
+| Curve Table             | CV_        | _Table     |                                  |
 | Data Asset              | *_         |            | Prefix should be based on class. |
 | Data Table              | DT_        |            |                                  |
-| Float Curve             | Curve_     | _Float     |                                  |
+| Float Curve             | CV_        | _Float     |                                  |
 | Foliage Type            | FT_        |            |                                  |
 | Force Feedback Effect   | FFE_       |            |                                  |
 | Landscape Grass Type    | LG_        |            |                                  |
@@ -322,7 +322,7 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | Sprite Sheet            | SS_        |            |                                  |
 | Static Vector Field     | VF_        |            |                                  |
 | Touch Interface Setup   | TI_        |            |                                  |
-| Vector Curve            | Curve_     | _Vector    |                                  |
+| Vector Curve            | CV_        | _Vector    |                                  |
 
 <a name="anc-paper2d"></a>
 <a name="1.2.8"></a>
