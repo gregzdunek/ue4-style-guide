@@ -41,52 +41,6 @@ Usually refers to a variable defined as a function argument or a local variable 
 
 When in the context of a class, often used to convey discussion about its definition and what it will hold.
 
-<a name="0"></a>
-## 0. Principles
-
-These principles have been adapted from [idomatic.js style guide](https://github.com/rwaldron/idiomatic.js/).
-
-<a name="0.1"></a>
-### 0.1 If your UE4 project already has a style guide, you should follow it.
-
-If you are working on a project or with a team that has a pre-existing style guide, it should be respected.  Any inconsistency between an existing style guide and this guide should defer to the existing.
-
-Style guides should be living documents however and you should propose style guide changes to an existing style guide as well as this guide if you feel the change benefits all usages.
-
-> #### "Arguments over style are pointless. There should be a style guide, and you should follow it."
-> [_Rebecca Murphey_](https://rmurphey.com)
-
-<a name="0.2"></a>
-### 0.2 All structure, assets, and code in any Unreal Engine 4 project should look like a single person created it, no matter how many people contributed.
-
-Moving from one project to another should not cause a re-learning of style and structure. Conforming to a style guide removes unneeded guesswork and ambiguities.
-
-It also allows for more productive creation and maintenance as one does not need to think about style, simply follow instructions. This style guide is written with best practices in mind, meaning that by following this style guide you will also minimize hard to track issues.
-
-<a name="0.3"></a>
-### 0.3 Friends do not let friends have bad style.
-
-If you see someone working either against a style guide or no style guide, try to correct them.
-
-When working within a team or discussing within a community such as [Unreal Slackers](http://join.unrealslackers.org/), it is far easier to help and to ask for help when people are consistent. Nobody likes to help untangle someone's Blueprint spaghetti or deal with assets with names they can't understand.
-
-If you are helping someone who's work conforms to a different but consistent and sane style guide, you should be able to adapt to it. If they do not conform to any style guide, please direct them here.
-
-<a name="0.4"></a>
-### 0.4 A team without a style guide is no team of mine.
-
-When joining an Unreal Engine 4 team one of your first questions should be "Do you have a style guide?". If the answer is no, you should be skeptical about their ability to work as a team.
-
-<a name="0.5"></a>
-### 0.5 Don't Break The Law
-
-Gamemakin LLC is not a lawyer, but please don't introduce illegal actions and behavior to a project, including but not limited to:
-
-* Don't distribute content you don't have the rights to distribute
-* Don't infringe on someone else's copyrighted or trademark material
-* Don't steal content
-* Follow licensing restrictions on content, e.g. attribute when attributions are needed
-
 <a name="toc"></a>
 ## Table of Contents
 
@@ -141,9 +95,9 @@ Depending on how your asset variants are made, you can chain together variant na
 
 | Asset Type              | Asset Name                                                 |
 | ----------------------- | ---------------------------------------------------------- |
-| Static Mesh (01)        | S_Rock_01                                                  |
-| Static Mesh (02)        | S_Rock_02                                                  |
-| Static Mesh (03)        | S_Rock_03                                                  |
+| Static Mesh (01)        | SM_Rock_01                                                 |
+| Static Mesh (02)        | SM_Rock_02                                                 |
+| Static Mesh (03)        | SM_Rock_03                                                 |
 | Material                | M_Rock                                                     |
 | Material Instance (Snow)| MI_Rock_Snow                                               |
 
@@ -193,11 +147,10 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Level (Gameplay)        |            | _Gameplay  |                                  |
 | Blueprint               | BP_        |            |                                  |
 | Material                | M_         |            |                                  |
-| Static Mesh             | SM_        |            | Many use SM_. Original uses S_.  |
+| Static Mesh             | SM_        |            |                                  |
 | Skeletal Mesh           | SK_        |            |                                  |
 | Texture                 | T_         | _?         | See [Textures](#anc-textures)    |
 | Animation Sequence      | AS_        |            |                                  |
-| Particle System         | PS_        |            |                                  |
 | Widget Blueprint        | WBP_       |            |                                  |
 
 <a name="anc-animations"></a>
@@ -217,7 +170,7 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Level Sequence          | LS_        |            |                                  |
 | Morph Target            | MT_        |            |                                  |
 | Paper Flipbook          | PFB_       |            |                                  |
-| Rig                     | Rig_       |            |                                  |
+| Rig                     | RIG_       |            |                                  |
 | Skeletal Mesh           | SK_        |            |                                  |
 | Skeleton                | SKEL_      |            |                                  |
 
@@ -248,7 +201,7 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Blueprint Interface     | BPI_       |            |                                  |
 | Blueprint Macro Library | BPML_      |            | Do not use macro libraries if possible. |
 | Enumeration             | E          |            | No underscore.                   |
-| Structure               | F or S     |            | No underscore.                   |
+| Structure               | F          |            | No underscore.                   |
 | Tutorial Blueprint      | TBP_       |            |                                  |
 | Widget Blueprint        | WBP_       |            |                                  |
 
@@ -281,8 +234,9 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Texture (Ambient Occlusion) | T_     | _O         |                                  |
 | Texture (Bump)          | T_         | _B         |                                  |
 | Texture (Emissive)      | T_         | _E         |                                  |
-| Texture (Mask)          | T_         | _M         |                                  |
+| Texture (Metallic)      | T_         | _M         |                                  |
 | Texture (Specular)      | T_         | _S         |                                  |
+| Texture (Packed Roughness+Metallic+Ambient Occlusion)| T_ | _RMA      |                                  |
 | Texture (Packed)        | T_         | _*         | See notes below about [packing](#anc-textures-packing). |
 | Texture Cube            | TC_        |            |                                  |
 | Media Texture           | MT_        |            |                                  |
@@ -371,6 +325,7 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Font                    | Font_      |            |                                  |
+| Font Face               | FontFace_  |            |                                  |
 | Slate Brush             | Brush_     |            |                                  |
 | Slate Widget Style      | Style_     |            |                                  |
 | Widget Blueprint        | WBP_       |            |                                  |
@@ -381,8 +336,13 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
-| Particle System         | PS_        |            |                                  |
-| Material (Post Process) | PP_        |            |                                  |
+| Niagara System          | NS_        |            |                                  |
+| Niagara Emitter         | NE_        |            |                                  |
+| Niagara Module Script   | NMS_       |            |                                  |
+| Niagara Function Script | NFS_       |            |                                  |
+| Niagara Dynamic Input Script | NDS_       |            |                                  |
+| Niagara Effect Type     | NET_       |            |                                  |
+| Niagara Parameter Collection | NPC_       |            |                                  |
 
 **[⬆ Back to Top](#table-of-contents)**
 
