@@ -212,8 +212,10 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Material                | M_         |            |                                  |
-| Material (Master)       | M_         | _MASTER    |                                  |
+| Material (Master)       | MM_        |            |                                  |
 | Material (Post Process) | PP_        |            |                                  |
+| Material Layer          | ML_        |            |                                  |
+| Material Layer Blend    | MLB_       |            |                                  |
 | Material Function       | MF_        |            |                                  |
 | Material Instance       | MI_        |            |                                  |
 | Material Parameter Collection | MPC_ |            |                                  |
